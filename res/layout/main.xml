@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidLintUselessParent -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+    <SlidingDrawer android:id="@+id/drawer"
+                   android:layout_width="fill_parent"
+                   android:layout_height="200dp"
+                   android:layout_alignParentBottom="true"
+                   android:layout_marginBottom="40dp"
+                   android:handle="@+id/info"
+                   android:content="@+id/content">
+        <LinearLayout android:layout_height="35dp"
+                      android:layout_width="fill_parent"
+                      android:background="@drawable/transtoblack"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:id="@id/info">
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="0px"
+                      android:layout_weight="2"
+                      android:gravity="center"
+                      android:textSize="12dp"
+                      android:id="@+id/feedTitle"/>
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="0px"
+                      android:layout_weight="3"
+                      android:gravity="center"
+                      android:text="^"/>
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="0px"
+                      android:layout_weight="2"
+                      android:gravity="center"
+                      android:textSize="12dp"
+                      android:id="@+id/refreshTime"/>
+        </LinearLayout>
+        <LinearLayout android:id="@id/content"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:background="#000"
+                      android:orientation="vertical"
+                      android:gravity="center">
+            <Button android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Choose feed..."
+                    android:id="@+id/choosefeed"/>
+            <Button android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Refresh"
+                    android:id="@+id/refresh"/>
+        </LinearLayout>
+    </SlidingDrawer>
+    <LinearLayout android:layout_height="40dp"
+                  android:layout_width="fill_parent"
+                  android:layout_alignParentBottom="true"
+                  android:id="@+id/tickerContainer"
+                  android:background="#000">
+        <HorizontalScrollView android:layout_height="40dp"
+                              android:layout_width="fill_parent"
+                              android:id="@+id/ticker"
+                              android:scrollbars="none"
+                              android:overScrollMode="never"
+                              android:visibility="gone">
+            <LinearLayout android:layout_height="fill_parent"
+                          android:layout_width="wrap_content"
+                          android:id="@+id/tickerContent"
+                          android:gravity="center_vertical"
+                          android:paddingLeft="10dp">
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <LinearLayout android:layout_height="40dp"
+                  android:layout_width="fill_parent"
+                  android:id="@+id/refreshContainer"
+                  android:layout_alignParentBottom="true"
+                  android:gravity="center">
+        <ProgressBar android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     style="?android:attr/android:progressBarStyleSmall"
+                     android:paddingRight="10dp"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="fill_parent"
+                  android:gravity="center"
+                  android:text="Refreshing..."/>
+    </LinearLayout>
+    <View android:layout_height="40dp"
+          android:layout_width="20dp"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:background="@drawable/leftfade"
+          android:id="@+id/leftfade"/>
+    <View android:layout_height="40dp"
+          android:layout_width="20dp"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentRight="true"
+          android:background="@drawable/rightfade"
+          android:id="@+id/rightfade"/>
+</RelativeLayout>
+
